@@ -1,0 +1,53 @@
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; /
+  padding: 10px 20px;
+  background-color: white
+
+}
+
+.logo-brand-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-brand {
+  display: flex;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #130202;
+  justify-content: center;
+  width: 100%;
+}
+
+/* 👇 This makes the logo go to the top right corner */
+#help-icon {
+  width: 40px;        /* adjust size */
+  height: 40px;       /* keeps it square */
+  object-fit: contain; /* ensures the image scales nicely */
+  position: absolute;  /* fixes it in the corner */
+  top: 10px;
+  right: 20px;
+  border: none;        /* removes img-thumbnail border */
+}
+
+#filter-icon {
+  width: 40px;        /* adjust size */
+  height: 40px;       /* keeps it square */
+  object-fit: contain; /* ensures the image scales nicely */
+  position: absolute;  /* fixes it in the corner */
+  top: 10px;
+  left: 20px;        /* positions it left of help icon */
+  border: none;        /* removes img-thumbnail border */
+}
+
+#camera-icon {
+    display: block;
+    margin: 20px auto;  /* centers the image horizontally */
+    width: 200px;       /* adjust size as needed */
+    height: auto;       /* maintains aspect ratio */
+    border: none;       /* removes img-thumbnail border */
+}
