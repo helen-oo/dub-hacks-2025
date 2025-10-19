@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="author" content="Helen, Matyana, , ">
-    <meta name="description" content="Weather Wise Project - A weather application that provides current weather data and forecasts.">
-    <meta name="keywords" content="weather, forecast, climate, temperature, humidity, wind speed">
+    <meta name="author" content="Helen, Matyana, Viet, Naurskie">
     <title>dAletician Project</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
@@ -19,19 +17,114 @@
   <body>
     <nav class="navbar">
         <div class="logo-brand-wrapper">
-        <a class="navbar-brand" style="text-decoration: none" href="home.html">dAIetician</a>
-        <img id="help-icon" src="images/help.png" class="img-thumbnail" alt="Help Icon">
-        <img id="filter-icon" src="images/filter1.png" class="img-thumbnail" alt="Filter Icon">
+            <img id="filter-icon" src="images/filter1.png" class="img-thumbnail" alt="Filter Icon">
+            <a class="navbar-brand" style="text-decoration: none" href="home.html">dAIetician</a>
+            <img id="help-icon" src="images/help.png" class="img-thumbnail" alt="Help Icon">
         </div>
     </nav>
 
-    <div class="fixed-bottom">
-        <img id="camera-icon" src="images/camera.png" class="img-thumbnail" alt="Filter Icon">
+    <main class="main-section" id="main-content">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Welcome to dAIetician!</h1>
+                <p>We are here to help you keep track of your health journey. </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- filter functionality -->
+    <!-- description of program to help user get a better understanding of program's goal -->
+    <div id="help-info" class="card p-3" style="display: none; position: absolute; top: 60px; right: 20px; z-index: 1000;">
+      <h5>More Info!</h5>
+      <p>We are here to help you keep track of your health journey. All you need to do is upload an image of your fridge
+        and provide us with your dietary restriction and it will align with your goals!</p>
     </div>
 
-    
+    <!-- most common filter options as a dropdown -->
+    <div id="filter-menu" class="card p-3" style="display: none; position: absolute; top: 60px; left: 20px; z-index: 1000;">
+      <h6>Filter Options</h6>
+      <div class="form-check">
+        <input class="form-check-input filter-checkbox" type="checkbox" value="dairyFree" id="filterDairy">
+        <label class="form-check-label" for="filterDairy">Dairy-Free</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input filter-checkbox" type="checkbox" value="diabeticFriendly" id="filterDiabetic">
+        <label class="form-check-label" for="filterDiabetic">Diabetic-Friendly</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input filter-checkbox" type="checkbox" value="eggFree" id="filterEgg">
+        <label class="form-check-label" for="filterEgg">Egg-Free</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input filter-checkbox" type="checkbox" value="glutenFree" id="filterGluten">
+        <label class="form-check-label" for="filterGluten">Gluten-Free</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input filter-checkbox" type="checkbox" value="halal" id="filterHalal">
+        <label class="form-check-label" for="filterHalal">Halal</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input filter-checkbox" type="checkbox" value="lowCard" id="filterCarb">
+        <label class="form-check-label" for="filterCarb">Low-Carb</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input filter-checkbox" type="checkbox" value="nutFree" id="filterNut">
+        <label class="form-check-label" for="filterNut">Nut-Free</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input filter-checkbox" type="checkbox" value="plantbased" id="filterplantbased">
+        <label class="form-check-label" for="filterplantbased">Plant-Based</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input filter-checkbox" type="checkbox" value="pescatarian" id="filterfish">
+        <label class="form-check-label" for="filterfish">Pescatarian</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input filter-checkbox" type="checkbox" value="soyFree" id="filterSoy">
+        <label class="form-check-label" for="filterSoy">Soy-Free</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input filter-checkbox" type="checkbox" value="vegan" id="filterVegan">
+        <label class="form-check-label" for="filterVegan">Vegan</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input filter-checkbox" type="checkbox" value="vegeterian" id="filterVegies">
+        <label class="form-check-label" for="filterVegies">Vegeterian</label>
+      </div>
+    </div>
 
-    
+    <!-- camera icon dropdown -->
+    <div class="text-center mb-3">
+        <div class="dropdown-center">
+        <img id="camera-icon" src="images/camera.png" class="dropdown-toggle" 
+            data-bs-toggle="dropdown" alt="Camera Icon" style="cursor: pointer;">
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" id="take-photo">Take Photo</a></li>
+            <li><a class="dropdown-item" href="#" id="open-photo-library">Choose from Photo Library</a></li>
+        </ul>
+        </div>
+    </div>
+
+    <input type="file" id="gallery-input" accept="image/camera.png" style="display: none;">
+
+    <div class="modal fade" id="cameraModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                <video id="camera-preview" autoplay playsinline style="width: 100%;"></video>
+                <button id="capture-btn" class="btn btn-primary mt-2">Capture</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- JavaScript -->
     <script src="main.js"></script>
