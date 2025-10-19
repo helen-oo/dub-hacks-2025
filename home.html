@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="author" content="Helen, Matyana, Viet, Naurskie">
+    <meta name="author" content="Helen, Matyana, Viet, Nurasikine">
     <title>dAletician Project</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
@@ -17,24 +17,37 @@
   <body>
     <nav class="navbar">
         <div class="logo-brand-wrapper">
-            <img id="filter-icon" src="images/filter1.png" class="img-thumbnail" alt="Filter Icon">
+            <img id="filter-icon" src="images/filter.png" alt="Filter Icon">
             <a class="navbar-brand" style="text-decoration: none" href="home.html">dAIetician</a>
-            <img id="help-icon" src="images/help.png" class="img-thumbnail" alt="Help Icon">
+            <img id="help-icon" src="images/help.png" alt="Help Icon">
         </div>
     </nav>
 
-    <main class="main-section" id="main-content">
-        <div class="row">
-            <div class="col text-center">
-                <h1>Welcome to dAIetician!</h1>
-                <p>We are here to help you keep track of your health journey. </p>
-            </div>
+    <main class="main-section container mt-4" id="main-content">
+      <div class="row">
+        <div class="col text-center">
+          <h1>Welcome to dAIetician!</h1>
+          <p>Discover recipes based on what you have</p>
+
+          <!-- New input prompt -->
+          <div class="input-group mb-3 w-75 mx-auto">
+            <input 
+              type="text" 
+              id="ingredient-input" 
+              class="form-control" 
+              placeholder="Enter food items (e.g., chicken, tomato, cheese)" 
+            >
+            <button class="btn btn-success" id="generate-recipes-btn">
+              Find Recipes
+            </button>
+          </div>
         </div>
+      </div>
     </main>
 
     <!-- filter functionality -->
     <!-- description of program to help user get a better understanding of program's goal -->
-    <div id="help-info" class="card p-3" style="display: none; position: absolute; top: 60px; right: 20px; z-index: 1000;">
+    <div id="help-info" class="card p-3" style="display: none; position: absolute; top: 100px; right: 20px; z-index: 1000;">
       <h5>More Info!</h5>
       <p>We are here to help you keep track of your health journey. All you need to do is upload an image of your fridge
         and provide us with your dietary restriction and it will align with your goals!</p>
@@ -89,7 +102,7 @@
       </div>
       <div class="form-check">
         <input class="form-check-input filter-checkbox" type="checkbox" value="vegeterian" id="filterVegies">
-        <label class="form-check-label" for="filterVegies">Vegeterian</label>
+        <label class="form-check-label" for="filterVegies">Vegetarian</label>
       </div>
     </div>
 
@@ -117,6 +130,10 @@
             </div>
         </div>
     </div>
+
+
+    <!-- <script src="https://unpkg.com/@google/generative-ai"></script> -->
+
 
 
     <!-- Bootstrap JS -->
