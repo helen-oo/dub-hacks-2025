@@ -1,5 +1,5 @@
 // generate recipe suggestions based on items
-const recipeApiKey = 'b4d6c0654ac841daae6f8d00ad6010aa';
+const recipeApiKey = 'dbc6a062ad6344f883add4dde39057f5';
 const recipeApi = 'https://api.spoonacular.com/recipes/complexSearch';
 const mainContent = document.getElementById('main-content');
 
@@ -29,7 +29,7 @@ const params = {
 // Function to fetch recipes based on items
 async function fetchRecipes() {
     try {
-        const response = await fetch(`${recipeApi}?includeIngredients=${getItems()}&number=12&addRecipeInformation=true`, params);
+        const response = await fetch(`${recipeApi}?includeIngredients=${getItems()}&number=9&addRecipeInformation=true`, params);
         console.log(response);
         const data = await response.json();
         console.log(data);
